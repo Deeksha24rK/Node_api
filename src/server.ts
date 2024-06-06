@@ -27,6 +27,10 @@ let users = [
     id: 4,
     name: "Thrupthi",
   },
+  {
+    id: 5,
+    name: "Ginger",
+  },
 ];
 
 //routes
