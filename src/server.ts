@@ -1,5 +1,6 @@
-// Create an express App
 import dotenv from "dotenv";
+
+// Create an express App
 const express = require("express");
 const app = express();
 
@@ -10,6 +11,7 @@ const port = process.env.PORT;
 // Middleware
 app.use(express.json());
 
+// Default list of users
 let users = [
   {
     id: 1,
@@ -17,43 +19,28 @@ let users = [
   },
   {
     id: 2,
-    name: "Karthik",
+    name: "Karthik S Kotian",
   },
   {
     id: 3,
-    name: "Akshitha",
-  },
-  {
-    id: 4,
-    name: "Thrupthi",
-  },
-  {
-    id: 5,
     name: "Ginger",
   },
 ];
 
-//routes
+// Routes
 
-// CRUD - Create , Read , Update , Delete
+// CRUD - Create , Read , Update , Delete (POST , GET , PUT , DELETE)
 
 app.get("/", (req, res) => {
   res.send("Hello response to API");
 });
 
-// Read
+// Read - GET
 app.get("/users", (req, res) => {
   res.json(users);
 });
 
-// Get one user
-app.get("/users/:id", (req, res) => {
-  const id = +req.params.id;
-  const user = users.filter((item) => item.id === id);
-  res.json(user[0]);
-});
-
-// Create
+// Create - POST
 app.post("/users", (req, res) => {
   const newUser = {
     id: Date.now(),
@@ -63,21 +50,26 @@ app.post("/users", (req, res) => {
   res.json(users);
 });
 
-//Update
+// Update - PUT
 app.put("/users", (req, res) => {
-  console.log(req.body);
   users.find((user) => user.id === req.body.id).name = req.body.name;
   res.json(users);
 });
 
-//Delete
+// Delete - DELETE
 app.delete("/users", (req, res) => {
-  console.log(req.body);
   users = users.filter((user) => user.id !== req.body.id);
   res.json(users);
 });
 
-// Start
+// Get a user from userId as param - GET
+app.get("/users/:id", (req, res) => {
+  const id = +req.params.id;
+  const user = users.filter((item) => item.id === id);
+  res.json(user[0]);
+});
+
+// Start the server
 app.listen(port, () => {
   console.log(`Server started on port ${port}`);
 });
