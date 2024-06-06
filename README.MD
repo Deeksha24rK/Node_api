@@ -42,6 +42,7 @@ To start the server, use the following command:
 
 ```bash
 npm start
+```
 
 ## Deployment
 
