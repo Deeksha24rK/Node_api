@@ -4,6 +4,11 @@
 
 This project is a simple API built using Node.js and Express.js. It demonstrates how to set up a Node.js project, install necessary dependencies, and create a basic server with environment configuration.
 
+Node.js is an open-source, server-side JavaScript runtime environment that allows you to run JavaScript code on the server.  It's built on the V8 JavaScript engine, which is the same engine that powers Google Chrome. 
+ Node.js enables developers to use JavaScript not only for client-side scripting in web browsers but also for server-side scripting, making it possible to create full-stack web applications entirely in JavaScript.
+
+Express.js is a minimal and flexible Node.js web application framework that provides a robust set of features to develop web and mobile applications.  It's designed to make building web applications with Node.js easier by providing a simple and intuitive API for handling HTTP requests, routing, middleware, and more.
+
 ## Table of Contents
 
 1. [Installation](#installation)
